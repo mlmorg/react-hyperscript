@@ -1,0 +1,42 @@
+{
+  "name": "react-hyperscript",
+  "description": "Hyperscript syntax for React.js markup",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mlmorg/react-hyperscript",
+  "author": {
+    "name": "Matt Morgan",
+    "email": "matt@mlmorg.com",
+    "url": "http://mlmorg.com"
+  },
+  "keywords": [
+    "react",
+    "react.js",
+    "hyperscript",
+    "markup",
+    "dom"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mlmorg/react-hyperscript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlmorg/react-hyperscript/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/mlmorg/react-hyperscript/blob/master/LICENSE"
+    }
+  ],
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jshint": "^2.5.6",
+    "tape": "^3.0.0",
+    "tap-spec": "^1.0.0"
+  },
+  "scripts": {
+    "jshint": "jshint --verbose $(git ls-files | grep '\\.js$')",
+    "test": "npm run jshint && node test/index.js | tap-spec"
+  }
+}
