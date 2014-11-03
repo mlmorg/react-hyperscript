@@ -16,6 +16,7 @@ function h(selector, properties, children) {
   properties = properties || {};
   var tagName = parseTag(selector, properties);
 
+  // Throw an error if the tag is invalid
   var reactDOMCreator = React.DOM[tagName];
   if (!reactDOMCreator) {
     throw new Error('React does not support the `'+tagName+'` tag');
