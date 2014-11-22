@@ -4,16 +4,15 @@ var h = require('../');
 
 function getDOMString(reactDOM) {
   // Create component
-  var Component = React.createClass({
+  var ComponentClass = React.createClass({
     render: function render() {
       return reactDOM;
     }
   });
+
   // Render component to string
-  var component = new Component();
-  var componentString = React.renderComponentToString(component);
-  // Remove react id and checksum from resulting dom string
-  return componentString.replace(/\sdata-reactid=\".*?\"/g, '').replace(/\sdata-react-checksum=\".*?\"/g, '');
+  var componentFactory = React.createFactory(ComponentClass);
+  return React.renderToStaticMarkup(componentFactory());
 }
 
 test('Creating an html tag', function t(assert) {

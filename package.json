@@ -30,7 +30,7 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "react": "^0.11.2",
+    "react": "^0.12.0",
     "virtual-hyperscript": "^4.5.0"
   },
   "devDependencies": {
