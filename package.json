@@ -34,12 +34,12 @@
     "virtual-hyperscript": "^4.5.0"
   },
   "devDependencies": {
-    "jshint": "^2.5.6",
+    "lint-trap": "^0.4.4",
     "tape": "^3.0.0",
     "tap-spec": "^1.0.0"
   },
   "scripts": {
-    "jshint": "jshint --verbose $(git ls-files | grep '\\.js$')",
-    "test": "npm run jshint && node test/index.js | tap-spec"
+    "lint": "lint-trap",
+    "test": "npm run lint && node test/index.js | tap-spec"
   }
 }
