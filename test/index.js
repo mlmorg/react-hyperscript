@@ -117,6 +117,60 @@ test('A tag with a children array as the second argument', function t(assert) {
   assert.end();
 });
 
+test('A component', function t(assert) {
+  assert.plan(1);
+
+  var dom = renderTestComponent();
+
+  assert.equal(dom, '<div><h1></h1></div>',
+    'renders the component correctly');
+  assert.end();
+});
+
+test('A component with props and children', function t(assert) {
+  assert.plan(1);
+
+  var dom = renderTestComponent({title: 'Hello World!'}, [
+    h('span', 'A child')
+  ]);
+
+  assert.equal(dom, '<div><h1>Hello World!</h1><span>A child</span></div>',
+    'renders the component with children and props correctly');
+  assert.end();
+});
+
+test('A component with children', function t(assert) {
+  assert.plan(1);
+
+  var dom = renderTestComponent([
+    h('span', 'A child')
+  ]);
+
+  assert.equal(dom, '<div><h1></h1><span>A child</span></div>',
+    'renders the component with children correctly');
+  assert.end();
+});
+
+function renderTestComponent() {
+  // Create a test component
+  var Component = React.createClass({
+    render: function render() {
+      return (
+        h('div', [
+          h('h1', this.props.title),
+          this.props.children
+        ])
+      );
+    }
+  });
+
+  // Render it with the passed args
+  var args = Array.prototype.slice.call(arguments);
+  args.unshift(Component);
+  var component = h.apply(h, args);
+  return getDOMString(component);
+}
+
 function getDOMString(reactDOM) {
   // Remove react id and checksum from resulting dom string
   return React.renderComponentToString(reactDOM)
