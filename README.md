@@ -29,6 +29,9 @@ module.exports = h.createClass({
 
 ## Documentation
 
+**If you're using React 0.11, use react-hyperscript 1.x.x. If you're using React
+0.12, use react-hyperscript 2.x.x.**
+
 #### `h(componentOrTag, properties, children)`
 
 Returns a React element.

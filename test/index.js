@@ -14,19 +14,6 @@ test('An html tag', function t(assert) {
   assert.end();
 });
 
-test('An invalid tag', function t(assert) {
-  assert.plan(1);
-
-  function invalidTagCreator() {
-    return getDOMString(
-      h('foo')
-    );
-  }
-
-  assert.throws(invalidTagCreator, 'throws an error');
-  assert.end();
-});
-
 test('A tag with an id and classes in the selector', function t(assert) {
   assert.plan(1);
 
@@ -171,9 +158,6 @@ function renderTestComponent() {
   return getDOMString(component);
 }
 
-function getDOMString(reactDOM) {
-  // Remove react id and checksum from resulting dom string
-  return React.renderComponentToString(reactDOM)
-    .replace(/\sdata-reactid=\".*?\"/g, '')
-    .replace(/\sdata-react-checksum=\".*?\"/g, '');
+function getDOMString(reactElement) {
+  return React.renderToStaticMarkup(reactElement);
 }

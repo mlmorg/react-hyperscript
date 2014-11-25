@@ -13,26 +13,14 @@ function h(componentOrTag, properties, children) {
     properties = {};
   }
 
+  // When a selector, parse the tag name and fill out the properties object
   if (typeof componentOrTag === 'string') {
-    componentOrTag = getTagFn(componentOrTag, properties);
+    componentOrTag = parseTag(componentOrTag, properties);
   }
 
-  // Call React.DOM
-  var args = [properties].concat(children);
-  return componentOrTag.apply(React.DOM, args);
-}
-
-function getTagFn(tag, properties) {
-  // Parse the tag name and fill out the properties
-  var tagName = parseTag(tag, properties);
-
-  // Throw an error if the tag is invalid
-  var tagFn = React.DOM[tagName];
-  if (!tagFn) {
-    throw new Error('React does not support the `' + tagName + '` tag');
-  }
-
-  return tagFn;
+  // Create the element
+  var args = [componentOrTag, properties].concat(children);
+  return React.createElement.apply(React, args);
 }
 
 function isChildren(x) {
