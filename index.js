@@ -5,12 +5,19 @@ var React = require('react');
 module.exports = h;
 
 function h(componentOrTag, properties, children) {
+  var slice = 2;
   properties = properties || {};
 
-  // If a child array or text node are passed as the second argument, shift them
-  if (!children && isChildren(properties)) {
+  // Allow for omitting the properties object
+  if (isChildren(properties)) {
     children = properties;
     properties = {};
+    slice = 1;
+  }
+
+  // Allow passing children as arguments instead of as an array
+  if (!Array.isArray(children)) {
+    children = Array.prototype.slice.call(arguments, slice);
   }
 
   // When a selector, parse the tag name and fill out the properties object
@@ -24,5 +31,5 @@ function h(componentOrTag, properties, children) {
 }
 
 function isChildren(x) {
-  return typeof x === 'string' || Array.isArray(x);
+  return typeof x === 'string' || React.isValidElement(x) || Array.isArray(x);
 }

@@ -104,6 +104,36 @@ test('A tag with a children array as the second argument', function t(assert) {
   assert.end();
 });
 
+test('A tag with children as arguments', function t(assert) {
+  assert.plan(1);
+
+  var Component = createTestComponent();
+  var dom = getDOMString(
+    h('div',
+      h(Component),
+      h('h1', 'Hello'))
+  );
+
+  assert.equal(dom, '<div><div><h1></h1></div><h1>Hello</h1></div>',
+    'renders the component correctly');
+  assert.end();
+});
+
+test('A tag with children as arguments with props', function t(assert) {
+  assert.plan(1);
+
+  var Component = createTestComponent();
+  var dom = getDOMString(
+    h('div', {className: 'bar'},
+      h(Component),
+      h('h1', 'Hello'))
+  );
+
+  assert.equal(dom, '<div class="bar"><div><h1></h1></div><h1>Hello</h1></div>',
+    'renders the component correctly');
+  assert.end();
+});
+
 test('A component', function t(assert) {
   assert.plan(1);
 
@@ -138,9 +168,8 @@ test('A component with children', function t(assert) {
   assert.end();
 });
 
-function renderTestComponent() {
-  // Create a test component
-  var Component = React.createClass({
+function createTestComponent() {
+  return React.createClass({
     render: function render() {
       return (
         h('div', [
@@ -150,6 +179,10 @@ function renderTestComponent() {
       );
     }
   });
+}
+
+function renderTestComponent() {
+  var Component = createTestComponent();
 
   // Render it with the passed args
   var args = Array.prototype.slice.call(arguments);
