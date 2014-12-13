@@ -6,10 +6,11 @@ Hyperscript syntax for React.js markup.
 
 ```js
 var h = require('react-hyperscript');
+var React = require('react');
 
 var AnotherComponent = require('./another-component');
 
-module.exports = h.createClass({
+module.exports = React.createClass({
   render: function render() {
     return (
       h('div.example', [
