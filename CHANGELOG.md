@@ -1,5 +1,9 @@
 # Changelog
 
+## `v2.1.0`
+
+Support React `v0.13`
+
 ## `v2.0.0`
 
 Support React `v0.12` using its new API
