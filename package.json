@@ -1,7 +1,7 @@
 {
   "name": "react-hyperscript",
   "description": "Hyperscript syntax for React.js markup",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "homepage": "https://github.com/mlmorg/react-hyperscript",
   "author": {
     "name": "Matt Morgan",
