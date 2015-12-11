@@ -1,5 +1,13 @@
 # Changelog
 
+## `v2.2.1`
+
+Fix bug where children could not be a number
+
+## `v2.2.0`
+
+Support React `v0.14`
+
 ## `v2.1.0`
 
 Support React `v0.13`
