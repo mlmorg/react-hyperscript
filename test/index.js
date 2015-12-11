@@ -74,6 +74,30 @@ test('A tag with a string as the second argument', function t(assert) {
   assert.end();
 });
 
+test('A tag with a number as the second argument', function t(assert) {
+  assert.plan(1);
+
+  var dom = getDOMString(
+    h('h1', 5)
+  );
+
+  assert.equal(dom, '<h1>5</h1>',
+    'renders a text node with a number within the element');
+  assert.end();
+});
+
+test('A tag with a number as the third argument', function t(assert) {
+  assert.plan(1);
+
+  var dom = getDOMString(
+    h('h1', null, 5)
+  );
+
+  assert.equal(dom, '<h1>5</h1>',
+    'renders a text node with a number within the element');
+  assert.end();
+});
+
 test('A tag with a children array as the third argument', function t(assert) {
   assert.plan(1);
 

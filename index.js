@@ -24,5 +24,5 @@ function h(componentOrTag, properties, children) {
 }
 
 function isChildren(x) {
-  return typeof x === 'string' || Array.isArray(x);
+  return typeof x === 'string' || typeof x === 'number' || Array.isArray(x);
 }
