@@ -98,6 +98,18 @@ test('A tag with a number as the third argument', function t(assert) {
   assert.end();
 });
 
+test('A tag with a `0` as the second argument', function t(assert) {
+  assert.plan(1);
+
+  var dom = getDOMString(
+    h('h1', 0)
+  );
+
+  assert.equal(dom, '<h1>0</h1>',
+    'renders a text node with a 0 within the element');
+  assert.end();
+});
+
 test('A tag with a children array as the third argument', function t(assert) {
   assert.plan(1);
 
