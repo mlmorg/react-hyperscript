@@ -1,5 +1,9 @@
 # Changelog
 
+## `v2.2.2`
+
+Fix bug where a child as the number `0` would not work
+
 ## `v2.2.1`
 
 Fix bug where children could not be a number
