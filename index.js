@@ -12,23 +12,23 @@ function h(componentOrTag, properties, children) {
   }
 
   properties = properties || {};
-  
+
   // Supported nested dataset attributes
-	if (properties.dataset) {
-		Object.keys(properties.dataset).forEach(function (attrName) {
-			var dashedAttr = attrName.replace(/([a-z])([A-Z])/, function(match) {
-				return match[0] + '-' + match[1].toLowerCase();
-			})
-			properties['data-'+dashedAttr] = properties.dataset[attrName];
-		});
-	}
+  if (properties.dataset) {
+    Object.keys(properties.dataset).forEach(function unnest(attrName) {
+      var dashedAttr = attrName.replace(/([a-z])([A-Z])/, function dash(match) {
+        return match[0] + '-' + match[1].toLowerCase();
+      });
+      properties['data-' + dashedAttr] = properties.dataset[attrName];
+    });
+  }
 
   // Support nested attributes
-	if (properties.attributes) {
-		Object.keys(properties.attributes).forEach(function (attrName) {
-			properties[attrName] = properties.attributes[attrName];
-		});
-	}
+  if (properties.attributes) {
+    Object.keys(properties.attributes).forEach(function unnest(attrName) {
+      properties[attrName] = properties.attributes[attrName];
+    });
+  }
 
   // When a selector, parse the tag name and fill out the properties object
   if (typeof componentOrTag === 'string') {
