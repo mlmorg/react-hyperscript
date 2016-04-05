@@ -1,6 +1,5 @@
 'use strict';
 var console = require('console');
-var forEach = require('for-each');
 var React = require('react');
 var test = require('tape');
 
@@ -59,6 +58,14 @@ var renderTests = {
     ]),
     html: '<h1><span></span><span></span></h1>'
   },
+  'tag with nested dataset': {
+    dom: h('div', {dataset: {foo: 'bar', bar: 'oops'}}),
+    html: '<div data-foo="bar" data-bar="oops"></div>'
+  },
+  'tag with nested attributes': {
+    dom: h('div', {attributes: {title: 'foo'}}),
+    html: '<div title="foo"></div>'
+  },
   'basic component': {
     dom: h(Component),
     html: '<div><h1></h1></div>'
@@ -78,8 +85,9 @@ var renderTests = {
 };
 
 test('Tags rendered with different arguments', function t(assert) {
-  forEach(renderTests, function runRenderTest(data, name) {
+  Object.keys(renderTests).forEach(function runRenderTest(name) {
     var dom;
+    var data = renderTests[name];
     var messages = catchWarns(function makeDomString() {
       dom = getDOMString(data.dom);
     });

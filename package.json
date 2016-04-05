@@ -37,7 +37,6 @@
     "eslint": "^1.8.0",
     "eslint-config-mlmorg": "^1.0.0",
     "eslint-plugin-perf-standard": "^1.0.3",
-    "for-each": "^0.3.2",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
   },
