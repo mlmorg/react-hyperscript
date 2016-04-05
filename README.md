@@ -30,8 +30,7 @@ module.exports = React.createClass({
 
 ## Documentation
 
-**If you're using React 0.11, use react-hyperscript 1.x.x. If you're using React
-0.12 or React 0.13, use react-hyperscript 2.x.x.**
+**If you're using React 0.11, use react-hyperscript 1.x.x. For later versions, use react-hyperscript 2.x.x.**
 
 #### `h(componentOrTag, properties, children)`
 
