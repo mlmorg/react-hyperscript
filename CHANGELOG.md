@@ -1,5 +1,9 @@
 # Changelog
 
+## `v2.3.0`
+
+Supports nested datasets and attributes with the `dataset` and `attributes` keys
+
 ## `v2.2.2`
 
 Fix bug where a child as the number `0` would not work
