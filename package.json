@@ -34,9 +34,10 @@
     "virtual-hyperscript": "^4.5.0"
   },
   "devDependencies": {
+    "for-each": "^0.3.2",
     "lint-trap": "^0.4.9",
-    "tape": "^3.0.0",
-    "tap-spec": "^1.0.0"
+    "tap-spec": "^1.0.0",
+    "tape": "^3.0.0"
   },
   "scripts": {
     "lint": "lint-trap",
