@@ -34,13 +34,15 @@
     "virtual-hyperscript": "^4.5.0"
   },
   "devDependencies": {
+    "eslint": "^1.8.0",
+    "eslint-config-mlmorg": "^1.0.0",
+    "eslint-plugin-perf-standard": "^1.0.3",
     "for-each": "^0.3.2",
-    "lint-trap": "^0.4.9",
-    "tap-spec": "^1.0.0",
-    "tape": "^3.0.0"
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1"
   },
   "scripts": {
-    "lint": "lint-trap",
+    "lint": "eslint .",
     "test": "npm run lint && node test/index.js | tap-spec"
   }
 }
