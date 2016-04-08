@@ -1,5 +1,9 @@
 # Changelog
 
+## `v2.4.0`
+
+Support React `v15`
+
 ## `v2.3.0`
 
 Supports nested datasets and attributes with the `dataset` and `attributes` keys
