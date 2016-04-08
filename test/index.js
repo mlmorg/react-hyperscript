@@ -1,6 +1,7 @@
 'use strict';
 var console = require('console');
 var React = require('react');
+var ReactDOM = require('react-dom/server');
 var test = require('tape');
 
 var h = require('../');
@@ -115,7 +116,7 @@ function createComponent() {
 }
 
 function getDOMString(reactElement) {
-  return React.renderToStaticMarkup(reactElement);
+  return ReactDOM.renderToStaticMarkup(reactElement);
 }
 
 function catchWarns(fn) {
