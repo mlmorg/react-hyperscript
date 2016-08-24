@@ -1,5 +1,9 @@
 # Changelog
 
+## `v2.4.1`
+
+Fix props.children handling when no children argument is passed
+
 ## `v2.4.0`
 
 Support React `v15`
