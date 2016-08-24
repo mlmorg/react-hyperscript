@@ -82,6 +82,10 @@ var renderTests = {
       h('span', 'A child')
     ]),
     html: '<div><h1></h1><span>A child</span></div>'
+  },
+  'component with children in props': {
+    dom: h(Component, {children: [h('span', 'A child')]}),
+    html: '<div><h1></h1><span>A child</span></div>'
   }
 };
 

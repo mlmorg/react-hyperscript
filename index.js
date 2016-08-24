@@ -9,6 +9,10 @@ function h(componentOrTag, properties, children) {
   if (!children && isChildren(properties)) {
     children = properties;
     properties = {};
+  } else if (arguments.length === 2) {
+    // If no children were passed, we don't want to pass "undefined"
+    // and potentially overwrite the `children` prop
+    children = [];
   }
 
   properties = properties || {};
