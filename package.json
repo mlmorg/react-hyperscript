@@ -31,7 +31,7 @@
   "main": "index.js",
   "dependencies": {
     "react": ">= 0.12.0 < 16.0.0",
-    "virtual-hyperscript": "^4.5.0"
+    "virtual-dom": "^2.1.1"
   },
   "devDependencies": {
     "eslint": "^1.8.0",
