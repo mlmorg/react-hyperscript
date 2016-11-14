@@ -1,6 +1,7 @@
 'use strict';
-var parseTag = require('virtual-hyperscript/parse-tag');
 var React = require('react');
+
+var parseTag = require('./parse-tag');
 
 module.exports = h;
 
