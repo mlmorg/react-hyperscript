@@ -11,81 +11,81 @@ var Component = createComponent();
 var renderTests = {
   'basic html tag': {
     dom: h('h1'),
-    html: '<h1></h1>'
+    html: '<H1></H1>'
   },
   'tag with an id and classes in selector': {
     dom: h('h1#boom.whatever.foo'),
-    html: '<h1 id="boom" class="whatever foo"></h1>'
+    html: '<H1 id="boom" class="whatever foo"></H1>'
   },
   'tag with an id and classes in selector and props': {
     dom: h('h1.foo', {className: 'bar'}),
-    html: '<h1 class="foo bar"></h1>'
+    html: '<H1 class="foo bar"></H1>'
   },
   'tag with other properties': {
     dom: h('a', {href: 'http://www.google.com'}),
-    html: '<a href="http://www.google.com"></a>'
+    html: '<A href="http://www.google.com"></A>'
   },
   'tag with string as third argument': {
     dom: h('h1', null, 'Hello World!'),
-    html: '<h1>Hello World!</h1>'
+    html: '<H1>Hello World!</H1>'
   },
   'tag with string as second argument': {
     dom: h('h1', 'Hello World!'),
-    html: '<h1>Hello World!</h1>'
+    html: '<H1>Hello World!</H1>'
   },
   'tag with number as second argument': {
     dom: h('h1', 5),
-    html: '<h1>5</h1>'
+    html: '<H1>5</H1>'
   },
   'tag with number as third argument': {
     dom: h('h1', null, 5),
-    html: '<h1>5</h1>'
+    html: '<H1>5</H1>'
   },
   'tag with `0` as second argument': {
     dom: h('h1', 0),
-    html: '<h1>0</h1>'
+    html: '<H1>0</H1>'
   },
   'tag with children array as third argument': {
     dom: h('h1', null, [
       h('span'),
       h('span')
     ]),
-    html: '<h1><span></span><span></span></h1>'
+    html: '<H1><SPAN></SPAN><SPAN></SPAN></H1>'
   },
   'tag with children array as second argument': {
     dom: h('h1', [
       h('span'),
       h('span')
     ]),
-    html: '<h1><span></span><span></span></h1>'
+    html: '<H1><SPAN></SPAN><SPAN></SPAN></h1>'
   },
   'tag with nested dataset': {
     dom: h('div', {dataset: {foo: 'bar', bar: 'oops'}}),
-    html: '<div data-foo="bar" data-bar="oops"></div>'
+    html: '<DIV data-foo="bar" data-bar="oops"></DIV>'
   },
   'tag with nested attributes': {
     dom: h('div', {attributes: {title: 'foo'}}),
-    html: '<div title="foo"></div>'
+    html: '<DIV title="foo"></DIV>'
   },
   'basic component': {
     dom: h(Component),
-    html: '<div><h1></h1></div>'
+    html: '<DIV><H1></H1></DIV>'
   },
   'component with props and children': {
     dom: h(Component, {title: 'Hello World!'}, [
       h('span', 'A child')
     ]),
-    html: '<div><h1>Hello World!</h1><span>A child</span></div>'
+    html: '<DIV><H1>Hello World!</H1><SPAN>A child</SPAN></DIV>'
   },
   'component with children': {
     dom: h(Component, [
       h('span', 'A child')
     ]),
-    html: '<div><h1></h1><span>A child</span></div>'
+    html: '<DIV><H1></H1><SPAN>A child</SPAN></DIV>'
   },
   'component with children in props': {
     dom: h(Component, {children: [h('span', 'A child')]}),
-    html: '<div><h1></h1><span>A child</span></div>'
+    html: '<DIV><H1></H1><SPAN>A child</SPAN></DIV>'
   }
 };
 
