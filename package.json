@@ -30,13 +30,11 @@
   ],
   "main": "index.js",
   "dependencies": {
-    "react": ">= 0.12.0 < 16.0.0",
-    "virtual-hyperscript": "^4.5.0"
+    "react": ">= 0.12.0 < 16.0.0"
   },
   "devDependencies": {
-    "eslint": "^1.8.0",
-    "eslint-config-mlmorg": "^1.0.0",
-    "eslint-plugin-perf-standard": "^1.0.3",
+    "eslint": "^2.0.0",
+    "eslint-config-mlmorg": "^2.0.0",
     "react-dom": "^15.0.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
