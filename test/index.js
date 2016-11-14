@@ -57,7 +57,7 @@ var renderTests = {
       h('span'),
       h('span')
     ]),
-    html: '<H1><SPAN></SPAN><SPAN></SPAN></h1>'
+    html: '<H1><SPAN></SPAN><SPAN></SPAN></H1>'
   },
   'tag with nested dataset': {
     dom: h('div', {dataset: {foo: 'bar', bar: 'oops'}}),
