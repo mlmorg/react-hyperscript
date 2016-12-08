@@ -7,6 +7,7 @@ var test = require('tape');
 var h = require('../');
 
 var Component = createComponent();
+var FunctionComponent = createFunctionComponent();
 
 var renderTests = {
   'basic html tag': {
@@ -86,6 +87,10 @@ var renderTests = {
   'component with children in props': {
     dom: h(Component, {children: [h('span', 'A child')]}),
     html: '<div><h1></h1><span>A child</span></div>'
+  },
+  'function component with children': {
+    dom: h(FunctionComponent, [h('span', 'A child')]),
+    html: '<div class="a-class"><span>A child</span></div>'
   }
 };
 
@@ -117,6 +122,14 @@ function createComponent() {
       );
     }
   });
+}
+
+function createFunctionComponent() {
+  return function(props) {
+    return (
+      h('div.a-class', props)
+    );
+  }
 }
 
 function getDOMString(reactElement) {
