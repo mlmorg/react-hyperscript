@@ -2,8 +2,9 @@
 
 ## `v3.0.0`
 
-Copy properties object to support inextensible records
-**Supporting Node.js v4+ now**
+- Copy properties object to support inextensible records
+- **`React` is now a peerDep** - make sure it is a dependency of your project
+- **Object.assign is used and *not* poly-filled**
 
 ## `v2.4.2`
 
