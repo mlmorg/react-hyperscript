@@ -1,5 +1,10 @@
 # Changelog
 
+## `v3.0.0`
+
+Copy properties object to support inextensible records
+**Supporting Node.js v4+ now**
+
 ## `v2.4.2`
 
 Remove virtual-hyperscript dependency
