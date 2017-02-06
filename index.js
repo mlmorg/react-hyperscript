@@ -16,7 +16,7 @@ function h(componentOrTag, properties, children) {
     children = [];
   }
 
-  properties = properties || {};
+  properties = properties ? Object.assign({}, properties) : {};
 
   // Supported nested dataset attributes
   if (properties.dataset) {
