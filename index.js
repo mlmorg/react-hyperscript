@@ -4,6 +4,7 @@ var React = require('react');
 var parseTag = require('./parse-tag');
 
 module.exports = h;
+module.exports.createElement = React.createElement
 
 function h(componentOrTag, properties, children) {
   // If a child array or text node are passed as the second argument, shift them
@@ -42,7 +43,7 @@ function h(componentOrTag, properties, children) {
 
   // Create the element
   var args = [componentOrTag, properties].concat(children);
-  return React.createElement.apply(React, args);
+  return module.exports.createElement.apply(React, args);
 }
 
 function isChildren(x) {
