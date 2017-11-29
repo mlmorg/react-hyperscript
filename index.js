@@ -26,6 +26,8 @@ function h(componentOrTag, properties, children) {
       });
       properties['data-' + dashedAttr] = properties.dataset[attrName];
     });
+
+    properties.dataset = undefined;
   }
 
   // Support nested attributes
@@ -33,6 +35,8 @@ function h(componentOrTag, properties, children) {
     Object.keys(properties.attributes).forEach(function unnest(attrName) {
       properties[attrName] = properties.attributes[attrName];
     });
+
+    properties.attributes = undefined;
   }
 
   // When a selector, parse the tag name and fill out the properties object
