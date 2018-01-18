@@ -1,5 +1,9 @@
 # Changelog
 
+## `v3.1.0`
+
+Support React `v16`
+
 ## `v3.0.0`
 
 - Copy properties object to support inextensible records
