@@ -1,8 +1,8 @@
 'use strict';
 var console = require('console');
-var React = require('react');
 var ReactDOM = require('react-dom/server');
 var test = require('tape');
+var createReactClass = require('create-react-class');
 
 var h = require('../');
 
@@ -112,7 +112,7 @@ test('Tags rendered with different arguments', function t(assert) {
 });
 
 function createComponent() {
-  return React.createClass({
+  return createReactClass({
     render: function render() {
       return (
         h('div', [
