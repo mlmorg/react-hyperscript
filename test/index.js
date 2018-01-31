@@ -85,7 +85,7 @@ var renderTests = {
     html: '<div><h1></h1><span>A child</span></div>'
   },
   'component with children in props': {
-    dom: h(Component, {children: [h('span', 'A child')]}),
+    dom: h(Component, {children: [h('span', { key: 'any-key' }, 'A child')]}),
     html: '<div><h1></h1><span>A child</span></div>'
   },
   'function component with children': {
