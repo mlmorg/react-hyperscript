@@ -141,9 +141,12 @@ function catchWarns(fn) {
 
   /* eslint-disable no-console */
   var originalWarn = console.warn;
+  var originalError = console.error;
   console.warn = warn;
+  console.error = warn;
   fn();
   console.warn = originalWarn;
+  console.error = originalError;
   /* esline-enable no-console */
 
   return messages;
