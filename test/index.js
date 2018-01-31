@@ -102,7 +102,7 @@ test('Tags rendered with different arguments', function t(assert) {
       dom = getDOMString(data.dom);
     });
 
-    assert.equal(messages.length, 0,
+    assert.deepEqual(messages, [],
       '`' + name + '` does not log warnings');
 
     assert.equal(dom, data.html,
