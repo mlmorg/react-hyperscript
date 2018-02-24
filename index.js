@@ -4,6 +4,7 @@ var React = require('react');
 var parseTag = require('./parse-tag');
 
 module.exports = h;
+module.exports.createElement = React.createElement
 
 function h(componentOrTag, properties, children) {
   // if only one argument which is an array, wrap items with React.Fragment
@@ -49,7 +50,7 @@ function h(componentOrTag, properties, children) {
 
   // Create the element
   var args = [componentOrTag, properties].concat(children);
-  return React.createElement.apply(React, args);
+  return module.exports.createElement.apply(React, args);
 }
 
 function isChildren(x) {
