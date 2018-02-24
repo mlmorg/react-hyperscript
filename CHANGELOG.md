@@ -1,5 +1,9 @@
 # Changelog
 
+## `v3.2.0`
+
+Add support for React fragments
+
 ## `v3.1.0`
 
 Support React `v16`
