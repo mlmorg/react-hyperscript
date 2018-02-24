@@ -6,8 +6,11 @@ var parseTag = require('./parse-tag');
 module.exports = h;
 
 function h(componentOrTag, properties, children) {
-  // If a child array or text node are passed as the second argument, shift them
-  if (!children && isChildren(properties)) {
+  // if only one argument which is an array, wrap items with React.Fragment
+  if (arguments.length === 1 && Array.isArray(componentOrTag)) {
+      return h(React.Fragment, null, componentOrTag);
+  } else if (!children && isChildren(properties)) {
+    // If a child array or text node are passed as the second argument, shift them
     children = properties;
     properties = {};
   } else if (arguments.length === 2) {

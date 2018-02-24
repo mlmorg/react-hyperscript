@@ -91,6 +91,10 @@ var renderTests = {
   'function component with children': {
     dom: h(FunctionComponent, [h('span', 'A child')]),
     html: '<div class="a-class"><span>A child</span></div>'
+  },
+  'fragments': {
+      dom: h([ h('li', 'first'), h('li', 'second'), h('li', 'third') ]),
+      html: '<li>first</li><li>second</li><li>third</li>'
   }
 };
 
