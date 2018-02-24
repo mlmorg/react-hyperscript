@@ -85,7 +85,7 @@ var renderTests = {
     html: '<div><h1></h1><span>A child</span></div>'
   },
   'component with children in props': {
-    dom: h(Component, {children: [h('span', 'A child')]}),
+    dom: h(Component, {children: [h('span', { key: 'any-key' }, 'A child')]}),
     html: '<div><h1></h1><span>A child</span></div>'
   },
   'function component with children': {
@@ -102,7 +102,7 @@ test('Tags rendered with different arguments', function t(assert) {
       dom = getDOMString(data.dom);
     });
 
-    assert.equal(messages.length, 0,
+    assert.deepEqual(messages, [],
       '`' + name + '` does not log warnings');
 
     assert.equal(dom, data.html,
@@ -141,9 +141,12 @@ function catchWarns(fn) {
 
   /* eslint-disable no-console */
   var originalWarn = console.warn;
+  var originalError = console.error;
   console.warn = warn;
+  console.error = warn;
   fn();
   console.warn = originalWarn;
+  console.error = originalError;
   /* esline-enable no-console */
 
   return messages;
