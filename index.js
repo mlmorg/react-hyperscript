@@ -53,5 +53,10 @@ function h(componentOrTag, properties, children) {
 }
 
 function isChildren(x) {
-  return typeof x === 'string' || typeof x === 'number' || Array.isArray(x);
+  return (
+    typeof x === 'string' ||
+    typeof x === 'number' ||
+    typeof x === 'function' ||
+    Array.isArray(x)
+  );
 }

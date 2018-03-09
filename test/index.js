@@ -8,6 +8,7 @@ var h = require('../');
 
 var Component = createComponent();
 var FunctionComponent = createFunctionComponent();
+var RenderPropComponent = createRenderPropComponent();
 
 var renderTests = {
   'basic html tag': {
@@ -88,6 +89,10 @@ var renderTests = {
     dom: h(Component, {children: [h('span', { key: 'any-key' }, 'A child')]}),
     html: '<div><h1></h1><span>A child</span></div>'
   },
+  'component with render prop': {
+    dom: h(RenderPropComponent, function(text) { return h('span', text) }),
+    html: '<div><span>Hello from render prop</span></div>'
+  },
   'function component with children': {
     dom: h(FunctionComponent, [h('span', 'A child')]),
     html: '<div class="a-class"><span>A child</span></div>'
@@ -132,6 +137,14 @@ function createFunctionComponent() {
   return function(props) {
     return (
       h('div.a-class', props)
+    );
+  }
+}
+
+function createRenderPropComponent() {
+  return function(props) {
+    return (
+      h('div', null, props.children('Hello from render prop'))
     );
   }
 }

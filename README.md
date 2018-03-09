@@ -44,6 +44,6 @@ If a tag string, it will parse out the tag name and change the `id` and
 `className` properties of the `properties` object.
 - **properties** `Object` *(optional)* - An object containing the properties
 you'd like to set on the element.
-- **children** `Array|String` *(optional)* - An array of `h()` children or
-a string. This will create child elements or a text node, respectively.
+- **children** `Array|String|Number|Function` *(optional)* - An array of `h()`
+children, string, number, or a function.
 - **listOfElements** `Array` - An array of React elements that will be wrapped with `React.Fragment`.
