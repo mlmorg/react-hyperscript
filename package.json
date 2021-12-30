@@ -31,14 +31,14 @@
   ],
   "main": "index.js",
   "peerDependencies": {
-    "react": ">= 0.12.0 < 17.0.0"
+    "react": ">= 0.12.0 < 18.0.0"
   },
   "devDependencies": {
     "create-react-class": "^15.6.2",
     "eslint": "^2.0.0",
     "eslint-config-mlmorg": "^2.0.0",
-    "react": ">= 0.12.0 < 17.0.0",
-    "react-dom": "^16.0.0",
+    "react": "^17",
+    "react-dom": "^17",
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1"
   },
